@@ -1,4 +1,4 @@
-package com.phonegap.guihuame;
+package com.phonegap.jiepai;
 
 import org.apache.cordova.*;
 import android.os.Bundle;
