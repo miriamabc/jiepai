@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<link rel="shortcut icon" href="img/mi.ico">
+	<title>桂花蜜</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/mobile_login_register.css" />
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+</head>
+<body>
+	<div id="signup">
+		<h1>注册桂花蜜</h1>
+		<form action="" method="post">
+			<div>
+				{% csrf_token %}
+				<input type="hidden" name="action" id="register_input" value="register"  />
+				<label for="nickname">昵称：</label>
+				<input type="text" name="nickname" id="nickname" value="{{ unauth_username }}"  placeholder="昵称"/>
+				{{ form.nickname.errors }}
+				<label for="username">邮箱：</label>
+				<input type="email" name="username" id="username" value="{{ unauth_username }}" placeholder="邮箱"/>
+				{{ form.username.errors }}
+				<label for="password">密码：</label>
+				<input type="password" name="password" id="password" value="" placeholder="密码" />
+				{{ form.password.errors }}
+				<input type="submit" value="注册" class="button" />
+				<input type="button" id="go_signin" class="button" value="我已经是桂花蜜会员">
+			</div>
+		</form>
+	</div>
+	<div id="signin">
+		<h1>登陆桂花蜜</h1>
+		<form action="" method="post">
+			<div>
+				{% csrf_token %}
+				<input type="hidden" name="action" id="login_input" value="login"  />
+				<label for="username">邮箱：</label>
+				<input type="email" name="username" id="username" value="{{ unauth_username }}" placeholder="邮箱"/>
+				{{ form.username.errors }}
+				<label for="password">密码：</label>
+				<input type="password" name="password" id="password" value="" placeholder="密码"/>
+				{{ form.password.errors }}
+				<input type="submit" value="登录"  class="button" />
+				<p class="tip">{{ login_error }}</p>
+			</div>
+		</form>
+	</div>
+	<script>
+		$('#go_signin').click(function(e){
+			$('#signup').fadeOut('fast');
+			$('#signin').fadeIn('fast');
+		})
+	</script>
+</body>
+</html>

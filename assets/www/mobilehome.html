@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<!--manifest="/static/files/mobile.manifest"-->
+<head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="img/mi.ico">
+    <title>桂花蜜</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/mobile.css" />
+	<link rel="stylesheet" href="css/scrollbar.css" />
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/iscroll.js"></script>
+	<script type="text/javascript" src="js/base.js"></script>
+    <script type="text/javascript" src="js/cordova-1.7.0.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    // Wait for Cordova to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+        var value = window.localStorage.getItem("user");
+		if (!value){
+			document.url = 'sign.html';
+		}
+    }
+    </script>
+</head>
+<body id="mobile">
+	<header id="global_header">
+		<div id="global_header_l"></div>
+		<div id="global_header_r"></div>
+		<h1>{{ user.first_name }}</h1>
+	</header>
+
+	<div class="page" id="home" data-title="桂花蜜" style="display: block;">
+		<div data-role="content">
+			<a href="" data-role="button" data-icon="search" class="camera">最新街拍列表</a>
+		</div>
+	</div>
+
+	<div class="page" id="books" data-title="我的书架">
+		<ul id="mybook">
+		</ul>
+	</div>
+
+	<div class="page" id="folder" data-title="我的书架>文件夹">
+	</div>
+
+	<div class="page" id="book" data-title="图书">
+	</div>
+
+	<div class="page" id="note" data-title="笔记">
+
+		<div class="write_note"><textarea placeholder="拍照" id="note_cont"></textarea></div>
+		<ul class="about_book">
+			<li class="select_book">
+				<h3>选择图书</h3>
+				<div>
+					<a href="" class="barcode_icon barcode" id="note_rel_book"></a>
+				</div>
+			</li>
+			<li class="select_page">
+				<h3>填写页码</h3>
+				<input type="text" value="" placeholder="数字" id="note_rel_page"/>
+			</li>
+			<li class="take_photo">
+				<h3>书页剪影</h3>
+				<div>
+					<a href="" class="camera_icon camera"></a>
+					<a href="" class="select_photo gallery_icon gallery"></a>
+				</div>
+
+			</li>
+		</ul>
+	</div>
+
+	<div class="page" id="isbn" data-title="扫描图书条形码">
+		<div data-role="content">
+			<ul data-role="listview" data-theme="d"  data-split-icon="gear" data-split-theme="d" id="xxx">
+				<li><a><img src=""><h3></h3></a><a></a></li>
+			</ul>
+			<div class="book_detail">
+
+			</div>
+			<div data-role="controlgroup" class="">
+			<a href="" data-role="button" data-theme="e" data-icon="plus" class="camera">继续扫描添加</a>
+			<a href="" data-role="button" data-icon="delete" data-bookid="">不添加这本书（待开发）</a>
+			<a href="#home" data-role="button" data-icon="home">回到首页</a>
+			</div>
+		</div>
+	</div>
+
+	<footer id="global_footer">
+			<a href="#home" class="hover"><span class="home_icon"></span><h3>首页</h3></a>
+			<a href="#books"><span class="book_icon"></span><h3>最赞</h3></a>
+			<a href="#note"><span class="pencil_icon"></span><h3>拍照</h3>
+</a>
+			<a href="#" ><span class="coffee_icon"></span><h3>最差</h3> </a>
+			<a href="#" ><span class="profile_icon"></span><h3>个人</h3></a>
+	</footer>
+
+	<script type="text/javascript" src="/static/js/mobile.js"></script>
+</body>
+</html>

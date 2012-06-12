@@ -1,0 +1,58 @@
+/** all **/
+body{
+	font-family: Verdana, Arial, Helvetica;
+	height: 100%;
+}
+.clr {
+	clear: both;
+	font-size: 0;
+	height: 0;
+}
+
+/** body general style **/
+.container{
+	width: 600px;
+	margin: 50px auto 30px auto;
+}
+/** body general style —— form**/
+.form1{
+	width: 322px;
+	margin: 50px auto 10px auto;
+}
+.form1>li{
+	margin: 15px 0 0 0;
+}
+input{
+	border: 1px #ccc solid;
+	width: 300px;
+	padding: 10px 10px;
+	border-radius: 5px;
+	line-height: 1;
+	height: 30px;
+	font-size: 20px;
+	background: #fff;
+	opacity: 1;
+}
+.submit{
+	border: 1px #FF0084 solid ;
+	background: #FF0084;
+	width: 80px;
+	height: 40px;
+	color: #fff;
+	border-radius: 5px;
+	cursor: pointer;
+	opacity: 1;
+	display: block;
+	margin: 0 auto;
+	font-size: 20px;
+}
+.submit:hover, .submit:active{
+	background-color:#eff3fb;
+	color:#36C;
+	border-color:#eff3fb;
+}
+
+/** login and register **/
+body#login, body#register {
+	background: url('/static/img/osmanthus_hug1.jpg') no-repeat top center;
+}
